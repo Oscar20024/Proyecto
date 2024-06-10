@@ -18,6 +18,8 @@ public class AgricultorImpl extends Trabajador  {
     public String getDescripcionTrabajo() {
         return "Esta Sembrando";
     }
+    
+    //ayudaaa
 
    
 }
