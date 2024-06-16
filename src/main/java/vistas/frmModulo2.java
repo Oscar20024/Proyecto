@@ -4,9 +4,6 @@
  */
 package vistas;
 
-import modulo2.CajaDeUva;
-import modulo2.GestionCajasUvas;
-
 
 public class frmModulo2 extends javax.swing.JFrame {
 
