@@ -6,7 +6,7 @@ package modulo2;
 
 import java.util.ArrayList;
 
-interface GestionCajasUvas {
+public interface GestionCajasUvas {
     boolean agregarCaja(CajaDeUva caja);
     boolean cajaYaRegistrada(String codigo);
 }

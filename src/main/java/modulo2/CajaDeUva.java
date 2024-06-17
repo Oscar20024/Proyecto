@@ -9,7 +9,7 @@ package modulo2;
  * @author USER
  */
 // Clase base para representar una caja de uvas
-class CajaDeUva {
+public class CajaDeUva {
     private String codigo;
     private double precio;
     private double peso;

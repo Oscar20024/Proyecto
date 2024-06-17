@@ -4,7 +4,7 @@ package modulo2;
 import java.util.ArrayList;
 
 
-class GestorCajasUvas implements GestionCajasUvas {
+public class GestorCajasUvas implements GestionCajasUvas {
     private ArrayList<CajaDeUva> cajasRegistradas;
 
     public GestorCajasUvas() {
@@ -33,4 +33,12 @@ class GestorCajasUvas implements GestionCajasUvas {
     public ArrayList<CajaDeUva> getCajasRegistradas() {
         return cajasRegistradas;
     }
+    
+  
+    
+    
+    
+    
+    
+    
 }

@@ -1,17 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package vistas;
 
 
-public class frmModulo2 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmModulo2
-     */
+import modulo2.CajaDeUva;
+import modulo2.GestionCajasUvas;
+import modulo2.GestorCajasUvas;
+import javax.swing.JOptionPane;
+
+public class frmModulo2 extends javax.swing.JFrame {
+    
+private GestorCajasUvas gestorCajas; // Declaración del gestor de cajas como campo de instancia
+    
+    
     public frmModulo2() {
         initComponents();
+        gestorCajas= new GestorCajasUvas();
     }
 
     /**
@@ -31,12 +35,12 @@ public class frmModulo2 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         cmbtipodeUva = new javax.swing.JComboBox<>();
         txtpeso = new javax.swing.JTextField();
-        txtcodigo = new javax.swing.JTextField();
         txtprecio = new javax.swing.JTextField();
-        btningresarcaja = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtarea2 = new javax.swing.JTextArea();
+        txtcodigo = new javax.swing.JTextField();
+        btningresar = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -65,10 +69,9 @@ public class frmModulo2 extends javax.swing.JFrame {
             }
         });
 
-        btningresarcaja.setText("INGRESAR");
-        btningresarcaja.addActionListener(new java.awt.event.ActionListener() {
+        txtprecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btningresarcajaActionPerformed(evt);
+                txtprecioActionPerformed(evt);
             }
         });
 
@@ -78,14 +81,23 @@ public class frmModulo2 extends javax.swing.JFrame {
         txtarea2.setRows(5);
         jScrollPane1.setViewportView(txtarea2);
 
+        txtcodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcodigoActionPerformed(evt);
+            }
+        });
+
+        btningresar.setText("INGRESAR");
+        btningresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btningresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(btningresarcaja, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 14, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,10 +114,15 @@ public class frmModulo2 extends javax.swing.JFrame {
                                 .addComponent(txtpeso, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel5))
-                            .addComponent(txtprecio, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbtipodeUva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(cmbtipodeUva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtcodigo, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtprecio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)))))
                 .addGap(16, 16, 16))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(btningresar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,15 +138,15 @@ public class frmModulo2 extends javax.swing.JFrame {
                     .addComponent(txtprecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(cmbtipodeUva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(btningresarcaja)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(35, 35, 35)
+                .addComponent(btningresar)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1)
                 .addContainerGap())
         );
@@ -162,9 +179,45 @@ public class frmModulo2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbtipodeUvaActionPerformed
 
-    private void btningresarcajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btningresarcajaActionPerformed
+    private void txtprecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprecioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprecioActionPerformed
+
+    private void txtcodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcodigoActionPerformed
+
+    private void btningresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btningresarActionPerformed
       
-    }//GEN-LAST:event_btningresarcajaActionPerformed
+            String codigo = txtcodigo.getText();
+        double precio = Double.parseDouble(txtprecio.getText());
+        double peso = Double.parseDouble(txtpeso.getText());
+        String tipoUva = (String) cmbtipodeUva.getSelectedItem();
+        
+        CajaDeUva caja = new CajaDeUva(codigo, precio, peso, tipoUva);
+        
+      
+            txtarea2.setText("Caja registrada:\n");
+            txtarea2.setText("Código: " + codigo + "\n");
+            txtarea2.setText("Precio: $" + precio + "\n");
+            txtarea2.setText("Peso: " + peso + " kg\n");
+            txtarea2.setText("Tipo de Uva: " + tipoUva + "\n");
+            txtarea2.setText("----------------------------\n");
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_btningresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,6 +247,7 @@ public class frmModulo2 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frmModulo2().setVisible(true);
@@ -202,7 +256,7 @@ public class frmModulo2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btningresarcaja;
+    private javax.swing.JButton btningresar;
     private javax.swing.JComboBox<String> cmbtipodeUva;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
