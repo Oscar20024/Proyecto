@@ -9,13 +9,13 @@ package modulo2;
  * @author USER
  */
 // Clase base para representar una caja de uvas
-public class CajaDeUva {
+public class Caja {
 private String codigo;
     private double precio;
     private double peso;
     private String tipoUva;
 
-    public CajaDeUva(String codigo, double precio, double peso, String tipoUva) {
+    public Caja(String codigo, double precio, double peso, String tipoUva) {
         this.codigo = codigo;
         this.precio = precio;
         this.peso = peso;
