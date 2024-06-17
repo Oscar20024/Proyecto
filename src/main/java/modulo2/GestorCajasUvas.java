@@ -1,43 +1,40 @@
 
 package modulo2;
 
+
 import java.util.ArrayList;
+import java.util.List;
 
-
-public class GestorCajasUvas implements GestionCajasUvas {
-    private ArrayList<CajaDeUva> cajasRegistradas;
+public class GestorCajasUvas {
+     private List<CajaDeUva> cajas;
 
     public GestorCajasUvas() {
-        cajasRegistradas = new ArrayList<>();
+        this.cajas = new ArrayList<>();
     }
 
-    @Override
     public boolean agregarCaja(CajaDeUva caja) {
-        if (!cajaYaRegistrada(caja.getCodigo())) {
-            cajasRegistradas.add(caja);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public boolean cajaYaRegistrada(String codigo) {
-        for (CajaDeUva caja : cajasRegistradas) {
-            if (caja.getCodigo().equals(codigo)) {
-                return true;
+        // Verificar si ya existe una caja con el mismo código
+        for (CajaDeUva c : cajas) {
+            if (c.getCodigo().equals(caja.getCodigo())) {
+                return false; // Ya existe, no se puede agregar
             }
         }
-        return false;
+        
+        // Si no existe, agregar la caja
+        cajas.add(caja);
+        return true;
     }
 
-    public ArrayList<CajaDeUva> getCajasRegistradas() {
-        return cajasRegistradas;
+    public void mostrarCajasRegistradas() {
+        for (CajaDeUva c : cajas) {
+            System.out.println("Caja registrada:");
+            System.out.println("Código: " + c.getCodigo());
+            System.out.println("Precio: $" + c.getPrecio());
+            System.out.println("Peso: " + c.getPeso() + " kg");
+            System.out.println("Tipo de Uva: " + c.getTipoUva());
+            System.out.println("----------------------------");
+        }
     }
-    
-  
-    
-    
-    
     
     
     

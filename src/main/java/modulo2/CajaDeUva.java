@@ -10,7 +10,7 @@ package modulo2;
  */
 // Clase base para representar una caja de uvas
 public class CajaDeUva {
-    private String codigo;
+private String codigo;
     private double precio;
     private double peso;
     private String tipoUva;
