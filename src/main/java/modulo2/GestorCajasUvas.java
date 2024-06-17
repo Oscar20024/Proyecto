@@ -26,6 +26,7 @@ public class GestorCajasUvas {
     }
 
     public void mostrarCajasRegistradas() {
+        StringBuilder stringBuilder = new StringBuilder();
         for (CajaDeUva c : cajas) {
             System.out.println("Caja registrada:");
             System.out.println("Código: " + c.getCodigo());

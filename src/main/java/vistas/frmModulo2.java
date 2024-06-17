@@ -198,8 +198,8 @@ private GestorCajasUvas gestorCajas; // Declaración del gestor de cajas como ca
        */
        
        String ProductosInfo = gestorCajas.mostrarCajasRegistradas();
-        System.out.println("Cajas registradas:");
-        gestorCajas.mostrarCajasRegistradas();
+       
+        txtarea2.setText(ProductosInfo);
 
       
     }//GEN-LAST:event_btningresarActionPerformed
