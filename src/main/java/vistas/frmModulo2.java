@@ -197,7 +197,7 @@ private GestorCajasUvas gestorCajas; // Declaración del gestor de cajas como ca
             }
        */
        
-       String ProductosInfo = gestorCajas.mostrarCajasRegistradas();
+       String ProductosInfo = gestorCajas.mostrarCajas();
        
         txtarea2.setText(ProductosInfo);
 

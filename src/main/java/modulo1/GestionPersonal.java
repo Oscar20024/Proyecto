@@ -26,6 +26,7 @@ public class GestionPersonal {
  public String mostrarTrabajadores() {
     StringBuilder stringBuilder = new StringBuilder();
     for (int i = 0; i < count; i++) {
+        
         Trabajador trabajador = trabajadores[i];
         stringBuilder.append(trabajador.nombre)
                      .append(" ")
@@ -35,6 +36,8 @@ public class GestionPersonal {
                      .append(") - ")
                      .append(trabajador.getDescripcionTrabajo())
                      .append("\n");
+        
+        
     }
     return stringBuilder.toString();
 }
